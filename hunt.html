@@ -3,16 +3,45 @@
 <head>
   <title>BCCS Hunting</title>
    <style type="text/css">
+    body {
+    background-image: url("camo.jpg");
+    }
+
+    .red-text {
+      color: red;
+    }
+
+    #playerOneId {
+    	float: left;
+    	margin-left: 300px;
+    }
+
+    #playerTwoId {
+    	float: right;
+    	margin-right: 300px;
+    }
+
+    .orange-text {
+    	color: orange;
+    }
+
     canvas {
       border: solid 1px #000;
-    }
+      background-color: white;
+  	}
+
   </style>
 </head>
 <body>
+<center>
+<h1 class="orange-text">BCCS Hunting</h1>
+<h4 class="red-text" id="playerOneId">Player One: 5</h4>
+<h4 class="red-text" id="playerTwoId">Player Two: 7</h4><br><br><br>
   <canvas id="canvas" width="600" height="400"></canvas>
+  </center>
   <script type="text/javascript">
 
-    //Create the Canvas
+    //create the canvas
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
     //creates array of animal objects
@@ -44,9 +73,32 @@
     };
 
 
+    var rightGun = {
+      x: 510,
+      y: 195,
+      height: 15,
+      width: 70
+    }
+
+    //make the turret on the right side of the canvas
+    context.beginPath();
+    context.arc(600, 200, 50, .5 * Math.PI, 1.5 * Math.PI);
+    context.closePath();
+    context.fillStyle = "black";
+    context.fill();
+    context.strokeStyle = "black";
+    context.stroke();
+
+    context.beginPath();
+    context.fillRect(rightGun.x,rightGun.y,rightGun.width,rightGun.height);
+    context.strokeStyle = "black";
+    context.rect(rightGun.x,rightGun.y,rightGun.width,rightGun.height);
+    context.stroke();
+
+    //run through the code to make the game work
     function playGame(){
 		context.clearRect(0,0,canvas.width,canvas.height);
-    	drawAnimals()
+    	drawAnimals();
     	requestAnimationFrame(playGame);
     }
 
@@ -54,8 +106,9 @@
     	createAnimal("duck", 20, 200, (0 - 20), 1);
     	createAnimal("bear", 20, 400, (0 - 20), 1);
 
-    playGame()
+    playGame();
   </script>
+
 
 </body>
 </html>
