@@ -2,14 +2,43 @@
 <html>
 <head>
   <title>BCCS Hunting</title>
-  <style type="text/css">
+   <style type="text/css">
+    body {
+    background-image: url("camo.jpg");
+    }
+
+    .red-text {
+      color: red;
+    }
+
+    #playerOneId {
+    	float: left;
+    	margin-left: 300px;
+    }
+
+    #playerTwoId {
+    	float: right;
+    	margin-right: 300px;
+    }
+
+    .orange-text {
+    	color: orange;
+    }
+    
     canvas {
       border: solid 1px #000;
-    }
+      background-color: white;
+  	}
+
   </style>
 </head>
 <body>
+<center>
+<h1 class="orange-text">BCCS Hunting</h1>
+<h4 class="red-text" id="playerOneId">Player One: 5</h4>
+<h4 class="red-text" id="playerTwoId">Player Two: 7</h4><br><br><br>
   <canvas id="canvas" width="600" height="400"></canvas>
+  </center>
   <script type="text/javascript">
 
     //create the canvas
@@ -34,10 +63,12 @@
     //run through the code to make the game work
     function playGame(){
       requestAnimationFrame(playGame);
+
     }
 
     playGame();
   </script>
+
 
 </body>
 </html>
