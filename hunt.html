@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>BCCS Hunting</title>
-   <style type="text/css">
+  <style type="text/css">
     canvas {
       border: solid 1px #000;
     }
@@ -12,15 +12,31 @@
   <canvas id="canvas" width="600" height="400"></canvas>
   <script type="text/javascript">
 
-    //Create the Canvas
+    //create the canvas
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
 
+    //make the turret on the right side of the canvas
+    context.beginPath();
+    context.arc(600, 200, 50, .5 * Math.PI, 1.5 * Math.PI);
+    context.closePath();
+    context.fillStyle = "black";
+    context.fill();
+    context.strokeStyle = "black";
+    context.stroke();
+
+    context.beginPath();
+    context.fillRect(510,195,70,15);
+    context.strokeStyle = "black";
+    context.rect(510,195,70,15);
+    context.stroke();
+
+    //run through the code to make the game work
     function playGame(){
       requestAnimationFrame(playGame);
     }
 
-    playGame()
+    playGame();
   </script>
 
 </body>
