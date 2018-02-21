@@ -12,20 +12,24 @@
             <canvas id="canvas" width="600" height="400"></canvas>
         </center>
         <script src="animals.js"></script>
+        <script src="move_gun.js"></script>
+        <script src="fire_bullets.js"></script>
+        <script src="keyclick.js"></script>
         <script type="text/javascript">
 
-        //Create the Canvas
-        var canvas = document.getElementById("canvas");
-        var context = canvas.getContext("2d");
+            //Create the Canvas
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
 
-        //run through the code to make the game work
-        function playGame(){
-            context.clearRect(0,0,canvas.width,canvas.height);
-            drawAnimals()
-            requestAnimationFrame(playGame);
-        }
+            //run through the code to make the game work
+            function playGame(){
+                context.clearRect(0,0,canvas.width,canvas.height);
+                drawAnimals();
 
-        playGame()
+                requestAnimationFrame(playGame);
+            }
+
+            playGame()
         </script>
 
     </body>

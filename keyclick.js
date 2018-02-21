@@ -1,6 +1,6 @@
 document.addEventListener("keydown", function(event){
     if (event.keyCode == 83) {
-
+      moveGunUp();
     } else if (event.keyCode == 38) {
 
     } else if (event.keyCode == 87) {
