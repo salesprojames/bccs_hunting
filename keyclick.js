@@ -8,6 +8,6 @@ document.addEventListener("keydown", function(event){
     } else if (event.keyCode == 40){
 
     } else if (event.keyCode == 32){
-
+    	fireBullet();
     }
 });
