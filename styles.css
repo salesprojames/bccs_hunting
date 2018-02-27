@@ -3,6 +3,10 @@ body {
   background-size: cover;
 }
 
+.white-background {
+  background-color: white;
+}
+
 .red-text {
   color: red;
 }
@@ -10,15 +14,25 @@ body {
 #playerOneId {
   float: left;
   margin-left: 300px;
+  width: 300px;
 }
 
 #playerTwoId {
   float: right;
   margin-right: 300px;
+  width: 300px;
 }
 
 .orange-text {
   color: orange;
+}
+
+.player-header {
+  font-size: 40px;
+}
+
+.title-header {
+  width: 300px;
 }
 
 canvas {
