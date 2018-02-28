@@ -6,9 +6,9 @@
     </head>
     <body>
         <center>
-            <h1 class="orange-text">BCCS Hunting</h1>
-            <h4 class="red-text" id="playerOneId">Player One: 5</h4>
-            <h4 class="red-text" id="playerTwoId">Player Two: 7</h4><br><br><br>
+            <h1 class="orange-text white-background title-header">BCCS Hunting</h1>
+            <h1 class="red-text white-background player-header" id="playerOneId">Player One: 5</h1>
+            <h1 class="red-text white-background player-header" id="playerTwoId">Player Two: 7</h1><br><br><br>
             <canvas id="canvas" width="600" height="400"></canvas>
         </center>
         <script src="animals.js"></script>
@@ -25,14 +25,12 @@
             function playGame(){
                 context.clearRect(0,0,canvas.width,canvas.height);
                 drawAnimals();
-                drawRightGun(); 
+                drawRightGun();
                 moveBullets();
                 drawBullets();
-
                 requestAnimationFrame(playGame);
             }
-
-            playGame()
+            playGame();
         </script>
 
     </body>
