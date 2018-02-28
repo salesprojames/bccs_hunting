@@ -8,11 +8,11 @@ document.addEventListener("keydown", function(event){
     } // the 'w' key
     else if (event.keyCode == 87) {
 	   	moveGunUp();
-    } // down arrow key 
+    } // down arrow key
     else if (event.keyCode == 40){
     	moveGunDown();
     } // space bar
     else if (event.keyCode == 32){
-
+        fireBullet();
     }
 });

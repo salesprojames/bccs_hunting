@@ -25,6 +25,9 @@
             function playGame(){
                 context.clearRect(0,0,canvas.width,canvas.height);
                 drawAnimals();
+                drawRightGun(); 
+                moveBullets();
+                drawBullets();
 
                 requestAnimationFrame(playGame);
             }
