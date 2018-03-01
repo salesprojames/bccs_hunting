@@ -37,7 +37,6 @@
 
                 if (gun.y == 200){
                     gun.movement = "positive"
-                    console.log("positive")
                 }
                 if (gun.y < 200 && gun.dir == "down"){
                     gun.movement = "negative"
@@ -45,8 +44,6 @@
                 if (gun.y > 200 && gun.dir == "up"){
                     gun.movement = "negative"
                 }
-                console.log(gun.movement)
-                console.log(gun.y)
             }
 
             function moveGunUp(){
@@ -91,13 +88,43 @@
                     moveGunDown();
                 } // space bar
                 else if (event.keyCode == 32){
-
+                    fireBullet()
                 }
             });
+
+            var bullets =[];
+
+            function fireBullet(){
+                bullets.push({
+                    x: gun.x,
+                    y: gun.y,
+                    size: 14.7,
+                    speed: 4
+                })
+            }
+
+            function drawBullets(){
+                for (i = 0; i < bullets.length; i++){
+                    context.fillStyle = "grey";
+                    context.beginPath();
+                    context.fillRect(bullets[i].x, bullets[i].y, bullets[i].size, bullets[i].size);
+                    context.stroke();
+                    context.fillStyle = 'black';
+
+                }
+            }
+
+            function moveBullets(){
+                for (i=0; i < bullets.length; i++){
+                    bullets[i].x -= bullets[i].speed;
+                }
+            }
             //run through the code to make the game work
             function playGame(){
                 context.clearRect(0,0,canvas.width,canvas.height);
                 drawRightGun();
+                moveBullets();
+                drawBullets();
                 requestAnimationFrame(playGame);
             }
 
